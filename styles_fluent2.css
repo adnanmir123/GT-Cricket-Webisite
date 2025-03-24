@@ -1,0 +1,575 @@
+/* Georgia Tech Cricket Club Website Styles with Fluent 2 Design */
+
+/* Variables for Georgia Tech branding colors */
+:root {
+    --tech-gold: #B3A369;
+    --navy-blue: #003057;
+    --white: #FFFFFF;
+    --light-gray: #f4f4f4;
+    --dark-gray: #333333;
+    
+    /* Fluent 2 Design System variables */
+    --fluent-border-radius: 4px;
+    --fluent-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --fluent-transition: all 0.2s ease-in-out;
+    --fluent-spacing-xs: 4px;
+    --fluent-spacing-s: 8px;
+    --fluent-spacing-m: 16px;
+    --fluent-spacing-l: 24px;
+    --fluent-spacing-xl: 32px;
+    --fluent-spacing-xxl: 48px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--fluent-spacing-l);
+}
+
+/* Fluent 2 Typography */
+.fluent-text {
+    margin-bottom: var(--fluent-spacing-m);
+}
+
+.fluent-text-hero {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--fluent-spacing-l);
+}
+
+.fluent-text-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--fluent-spacing-m);
+}
+
+.fluent-text-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--fluent-spacing-m);
+}
+
+.fluent-text-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--fluent-spacing-m);
+}
+
+.fluent-text-caption {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #666;
+}
+
+/* Fluent 2 Components */
+.fluent-divider {
+    height: 3px;
+    width: 100px;
+    background-color: var(--tech-gold);
+    margin: 0 auto var(--fluent-spacing-xl);
+}
+
+.fluent-card {
+    background-color: var(--white);
+    border-radius: var(--fluent-border-radius);
+    box-shadow: var(--fluent-shadow);
+    padding: var(--fluent-spacing-l);
+    transition: var(--fluent-transition);
+    overflow: hidden;
+}
+
+.fluent-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.fluent-button {
+    display: inline-block;
+    padding: var(--fluent-spacing-s) var(--fluent-spacing-l);
+    border-radius: var(--fluent-border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--fluent-transition);
+    text-align: center;
+}
+
+.fluent-button.primary {
+    background-color: var(--tech-gold);
+    color: var(--white);
+}
+
+.fluent-button.primary:hover {
+    background-color: #9a8a57;
+}
+
+.fluent-button.secondary {
+    background-color: var(--white);
+    color: var(--navy-blue);
+    border: 1px solid var(--navy-blue);
+}
+
+.fluent-button.secondary:hover {
+    background-color: var(--navy-blue);
+    color: var(--white);
+}
+
+.fluent-link {
+    color: var(--navy-blue);
+    text-decoration: none;
+    transition: var(--fluent-transition);
+}
+
+.fluent-link:hover {
+    color: var(--tech-gold);
+}
+
+.fluent-section {
+    padding: var(--fluent-spacing-xxl) 0;
+}
+
+.fluent-section.alternate {
+    background-color: var(--light-gray);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--fluent-spacing-m);
+}
+
+/* Navigation */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--navy-blue);
+    z-index: 1000;
+    box-shadow: var(--fluent-shadow);
+    transition: var(--fluent-transition);
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--fluent-spacing-m) var(--fluent-spacing-l);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: var(--fluent-spacing-m);
+}
+
+.logo .fluent-text {
+    color: var(--tech-gold);
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: var(--fluent-spacing-l);
+}
+
+.nav-links .fluent-link {
+    color: var(--white);
+    font-weight: 600;
+    padding: var(--fluent-spacing-xs) var(--fluent-spacing-s);
+}
+
+.nav-links .fluent-link:hover {
+    color: var(--tech-gold);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--white);
+    transition: var(--fluent-transition);
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 48, 87, 0.8), rgba(0, 48, 87, 0.8)), url('https://ramblinwreck.com/wp-content/uploads/2019/08/GT-Athletics-Web-Header-1.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding-top: 80px;
+}
+
+#hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero .fluent-text-hero,
+#hero .fluent-text-subtitle {
+    color: var(--white);
+}
+
+#hero .fluent-button {
+    margin-top: var(--fluent-spacing-l);
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--fluent-spacing-xl);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--fluent-border-radius);
+}
+
+/* Roster Section */
+.roster-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fluent-spacing-xl);
+}
+
+.team-leaders, .team-members {
+    text-align: center;
+    margin-bottom: var(--fluent-spacing-xl);
+}
+
+.leader-cards {
+    display: flex;
+    justify-content: center;
+    gap: var(--fluent-spacing-l);
+    flex-wrap: wrap;
+}
+
+.leader-card {
+    padding: var(--fluent-spacing-l);
+    text-align: center;
+    width: 250px;
+}
+
+.leader-img {
+    width: 150px;
+    height: 150px;
+    background-color: var(--tech-gold);
+    border-radius: 50%;
+    margin: 0 auto var(--fluent-spacing-l);
+}
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--fluent-spacing-l);
+}
+
+.player {
+    padding: var(--fluent-spacing-m);
+    text-align: center;
+}
+
+/* Schedule Section */
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fluent-spacing-xl);
+}
+
+.fluent-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fluent-table th,
+.fluent-table td {
+    padding: var(--fluent-spacing-m);
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.fluent-table th {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.fluent-table tr:nth-child(even) {
+    background-color: var(--light-gray);
+}
+
+.practice-info {
+    text-align: center;
+}
+
+/* Social Media Section */
+.social-content {
+    text-align: center;
+}
+
+.social-text {
+    max-width: 700px;
+    margin: 0 auto var(--fluent-spacing-xl);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--fluent-spacing-xl);
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icon i {
+    font-size: 3rem;
+    margin-bottom: var(--fluent-spacing-s);
+    color: var(--navy-blue);
+    transition: var(--fluent-transition);
+}
+
+.social-icon:hover i {
+    color: var(--tech-gold);
+    transform: translateY(-5px);
+}
+
+.social-icon span {
+    color: var(--navy-blue);
+}
+
+/* Donation Section */
+.donate-bg {
+    background: linear-gradient(rgba(0, 48, 87, 0.9), rgba(0, 48, 87, 0.9)), url('https://ramblinwreck.com/wp-content/uploads/2019/08/GT-Athletics-Web-Header-1.jpg') no-repeat center center/cover;
+    color: var(--white);
+}
+
+.donate-bg .section-title,
+.donate-bg .fluent-text-body {
+    color: var(--white);
+}
+
+.donate-content {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--fluent-spacing-xl);
+    align-items: center;
+}
+
+.donate-text {
+    flex: 1;
+}
+
+.donate-text ul {
+    margin-left: var(--fluent-spacing-l);
+    margin-bottom: var(--fluent-spacing-l);
+    color: var(--white);
+}
+
+.donate-form {
+    flex: 1;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.donate-btn {
+    padding: var(--fluent-spacing-m) var(--fluent-spacing-xl);
+    font-size: 1.2rem;
+    margin-bottom: var(--fluent-spacing-l);
+}
+
+/* Footer */
+footer {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    padding: var(--fluent-spacing-xxl) 0 var(--fluent-spacing-l);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--fluent-spacing-xl);
+    margin-bottom: var(--fluent-spacing-xl);
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: var(--fluent-spacing-m);
+}
+
+.footer-logo .fluent-text-body {
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+.footer-links .fluent-text-subtitle,
+.footer-contact .fluent-text-subtitle {
+    color: var(--tech-gold);
+    margin-bottom: var(--fluent-spacing-l);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: var(--fluent-spacing-s);
+}
+
+.footer-links .fluent-link {
+    color: var(--white);
+}
+
+.footer-links .fluent-link:hover {
+    color: var(--tech-gold);
+}
+
+.footer-contact p {
+    margin-bottom: var(--fluent-spacing-s);
+    display: flex;
+    align-items: center;
+    color: var(--white);
+}
+
+.footer-contact i {
+    margin-right: var(--fluent-spacing-s);
+    color: var(--tech-gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--fluent-spacing-l);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom .fluent-text-caption {
+    color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-content, .donate-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        margin-top: var(--fluent-spacing-l);
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--navy-blue);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        padding: var(--fluent-spacing-l) 0;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: var(--fluent-spacing-m) 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .fluent-text-hero {
+        font-size: 2.5rem;
+    }
+    
+    .fluent-text-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .fluent-text-title {
+        font-size: 2rem;
+    }
+    
+    .leader-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
